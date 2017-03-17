@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+docker run \
+    --env-file="$VG_ENV_FILE" \
+    --interactive \
+    --tty \
+    --rm \
+    --publish 80:80 \
+    --volume="$VG_APP_DIR":/usr/src/app \
+    axelrod

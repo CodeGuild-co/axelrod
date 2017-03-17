@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Iterative Prisoners' Dilemma Strategy Game</title>
+        <meta http-equiv="Content-Type" content="text/ html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" integrity="sha256-lCqHBvboFPu7gyEswcz5UdbXKyB6FDOtfbOeMvUEfkY=" crossorigin="anonymous" />
+
+        <link href="/static/styles.css?{{ lipsum(n=1, html=False) | urlencode }}" type="text/css" rel="stylesheet" />
+    </head>
+    <body><div class="ui container">
+
+        <h1>Axelrod</h1>
+
+        <div class="ui segments lobby">
+            <div class="ui segment">
+                <h2>Lobby</h2>
+            </div>
+            <div class="ui blue segment list-container loading">
+                <div class="ui relaxed divided list"></div>
+            </div>
+            <div class="ui segment">
+                <p>Click a player to start a game with them</p>
+            </div>
+        </div>
+
+        <div class="ui segments matches">
+            <div class="ui segment">
+                <h2>Matches</h2>
+            </div>
+            <div class="ui red segment list-container loading">
+                <div class="ui relaxed divided list"></div>
+            </div>
+            <div class="ui segment">
+                <p>Click a match to see its progress and to play</p>
+            </div>
+        </div>
+
+        <div class="ui segments playing">
+            <div class="ui segment">
+                <h2>Playing</h2>
+            </div>
+            <div class="ui green segment table-container loading">
+                <table class="ui celled table">
+                    <thead><tr>
+                        <th class="eight wide right aligned">You</th>
+                        <th class="eight wide">Them</th>
+                    </tr></thead>
+                    <tbody class="rounds"></tbody>
+                    <tbody class="play-next">
+                        <tr class="center aligned"><td colspan="2">
+                            <button class="ui button secondary">Play Next Round</button>
+                        </td></tr>
+                    </tbody>
+                    <tfoot><tr>
+                        <th class="right aligned"><span class="you-total"></span> years</th>
+                        <th><span class="them-total"></span> years</th>
+                    </tr></tfoot>
+                </table>
+            </div>
+        </div>
+
+        <div class="ui modal small register">
+            <div class="header">Register</div>
+            <div class="content">
+                <form class="ui form">
+                    <div class="field">
+                        <label>Username</label>
+                        <div class="ui left icon input">
+                            <input placeholder="Username" type="text" name="username">
+                            <i class="user icon"></i>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Strategy</label>
+                        <select name="strategy" class="ui fluid dropdown">
+                            {% for s in strategies %}
+                                <option value="{{ s.__name__ }}">{{ s.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="actions">
+                <button class="ui button positive">Register</button>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js" integrity="sha256-mq9Ru97qzOm1x5zeYFfPniWgQP9tEmjo3O4jUEJdjNY=" crossorigin="anonymous"></script>
+        <script src="/static/scripts.js?{{ lipsum(n=1, html=False) | urlencode }}"></script>
+    </div></body>
+</html>

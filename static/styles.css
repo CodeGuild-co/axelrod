@@ -1,0 +1,4 @@
+.ui.table .play-next tr:first-child td {
+    border-top: 1px solid rgb(34,36,38);
+    border-top: 1px solid rgba(34,36,38,.1);
+}

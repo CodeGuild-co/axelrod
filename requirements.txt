@@ -1,0 +1,6 @@
+Axelrod==2.6.0
+Flask==0.12
+Flask-SSE==0.2.1
+gevent==1.2.1
+gunicorn==19.7.0
+redis==2.10.5
