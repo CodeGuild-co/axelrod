@@ -23,7 +23,7 @@ The Accuracy Tester - DO NOT ALTER THIS FILE. Use it to output the current accur
 
 
 
-previousGames.csv - DO NOT CHANGE THE NAME OF THIS FILE. - When updating the application with a new strategy update this csv file. Input the data in this format:
+previousGames.csv - DO NOT CHANGE THE NAME OF THIS FILE. - When updating the application with a new strategy run a tournament of your strategy against all of the other strategies - update this csv file. Input the data in this format:
 0 - Represents Silent
 1 - Represents Betray
 
