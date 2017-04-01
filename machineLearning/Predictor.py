@@ -4,6 +4,7 @@ import math
 import operator
 
 # prepare data
+dataFile = 'previousGames.csv'
 usersInput = []
 enemyHistory = []
 playerHistory = []
@@ -147,9 +148,8 @@ def doPredictions(enemyStrategy):
     	print("Opponents next move (prediction) - silence")
     elif result == True:
     	print("Opponents next move (prediction) - betray")
-    print(result)
 
-loadDataset('previousGames.csv', trainingSet)
+loadDataset(dataFile , trainingSet)
 print('Train set: ' + repr(len(trainingSet)))
 
 while finished == False:
@@ -167,7 +167,3 @@ while finished == False:
     print('>predicted player strategy = ' + playerStrategy)
 
     doPredictions(enemyStrategy)
-
-
-
-
