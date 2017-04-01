@@ -143,7 +143,10 @@ def doPredictions(enemyStrategy):
         result = predictTitForTat()
     elif enemyStrategy == "Grudger":
         result = predictUnforgiving()
-
+    if result == False:
+    	print("Opponents next move (prediction) - silence")
+    elif result == True:
+    	print("Opponents next move (prediction) - betray")
     print(result)
 
 loadDataset('previousGames.csv', trainingSet)
